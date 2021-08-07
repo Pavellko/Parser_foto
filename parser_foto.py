@@ -5,10 +5,7 @@ from PIL import Image
 
 r = rq.get(input("Дай ссылку: "))
 
-
-
-
-# print(r.encoding)
+print(r.encoding)
 r.encoding = 'cp1251'
 s = BeautifulSoup(r.text, "html.parser")
 
@@ -17,10 +14,11 @@ ancor = s.find_all("a", href=True)
 titl = s.find("h1").text.replace('"', '-')
 titl = titl.split()
 titl='_'.join(titl)
-# print(titl)
-# print(myimg)
-# print(ancor)
+
 print(titl)
+print(myimg)
+print(ancor)
+
 z=[]
 for i in ancor:
 	if ('jpeg' in i['href'] or 'jpg' in i['href']) and ('http' in i['href']):
@@ -35,7 +33,6 @@ for ii in myimg:
 		z.append(ii['src'])
 	else:
 		pass
-
 
 if not os.path.isdir(titl): 
 	os.mkdir(titl)
