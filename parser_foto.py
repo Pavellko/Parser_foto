@@ -4,7 +4,7 @@ import requests as rq
 from PIL import Image
 
 r = rq.get(input("Дай ссылку: "))
-# r = rq.get('http://ybanda.com/5429-matyura-pokazala-svoyu-pisku-i-popu-krupnym-planom-na-porno-foto.html')
+
 
 
 
